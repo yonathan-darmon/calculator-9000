@@ -2,5 +2,6 @@ input{
     min-height:75px;
     width:55%;
     border: solid 5px blue;
-    border-radius:25px
+    border-radius:25px;
+    background-color:aquamarine;
 }

@@ -1,3 +1,11 @@
 .corp{
     display: flex;
 }
+.touche{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding:10px;
+    margin-left: 15px;
+    width: 20%;
+}

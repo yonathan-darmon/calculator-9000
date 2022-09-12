@@ -1,10 +1,5 @@
-.bouton{
-    display: flex;
-    flex-direction: column;
-    gap: 10%;
-}
-    .bouton p{
-    background-color: blue;
+.equal{
+    background-color: red;
     padding: 10px;
     text-align: center;
     margin-right: auto;
@@ -12,5 +7,4 @@
     border-radius: 10px;
     font-size:20px;
 
-
-    }
+}

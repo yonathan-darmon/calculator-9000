@@ -1,6 +1,7 @@
 import BeautifullScreen from "./BeautifulScreen";
 import Number from "./AmazingNumberButton";
 import GreatOperation from "./GreatOperationButton";
+import Equal from "./MagnificientEqualButton";
 import "../css/calculator.css"
 export default function Calculator(){
     return(
@@ -10,7 +11,11 @@ export default function Calculator(){
             </div>
             <div className="corp">
                 <Number/>
-                <GreatOperation/>
+                <div className='touche'>
+                    <GreatOperation/>
+                    <Equal/>
+
+                </div>
             </div>
         </div>
     )
