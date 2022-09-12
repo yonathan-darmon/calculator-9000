@@ -1,0 +1,6 @@
+input{
+    min-height:50px;
+    width:55%;
+    border: solid 5px blue;
+    border-radius:25px
+}
