@@ -1,7 +1,6 @@
 import './App.css';
 import TheTitle from './Component/TheTitle';
-import BeautifullScreen from './Component/BeautifulScreen';
-import Number from './Component/AmazingNumberButton';
+import Calculator from './Component/Calculator';
 function App() {
   return (
     <div className="App">
@@ -9,8 +8,7 @@ function App() {
         <TheTitle/>
       </header>
       <main>
-        <BeautifullScreen/>
-        <Number/>
+        <Calculator/>
       </main>
     </div>
   );

@@ -1,0 +1,17 @@
+.bouton{
+    width:30%;
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+    margin-left: 5%;
+}
+    .bouton p{
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    margin-right: auto;
+    width:50%;
+    border-radius: 10px;
+
+
+    }
