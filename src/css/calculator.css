@@ -4,6 +4,21 @@
     margin-top: 20px;
     margin-bottom:30px;
 }
+.number{
+    display:grid;
+grid-template-columns: 33% 33% 33%;
+grid-gap: 4px;
+width:70%;
+}
+.number button{
+
+    background-color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 10px;
+    
+    }
 .touche{
     display: flex;
     flex-direction: column;
@@ -11,4 +26,33 @@
     padding:10px;
     margin-left: 15px;
     width: 20%;
+}
+.numer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.numer button{
+    background-color: blue;
+    padding: 10px;
+    text-align: center;
+    margin-right: auto;
+    width:50%;
+    border-radius: 10px;
+    font-size:20px;
+}
+
+.equal {
+    background-color: red;
+    padding: 10px;
+    text-align: center;
+    margin-right: auto;
+    width:50%;
+    border-radius: 10px;
+    font-size:20px;
+}
+.equal button{
+    background-color:red;
+    border:none;
+    font-size:20px
 }

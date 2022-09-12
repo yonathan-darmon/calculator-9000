@@ -1,11 +1,7 @@
 import '../css/equal.css'
 
-export default function Equal(){
+export default function Equal(props){
     return(
-        <div className='equal'>
-            <p >
-            =
-            </p>
-        </div>
+       <button>{props.equal}</button>
     )
 }

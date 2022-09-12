@@ -1,13 +1,6 @@
 import '../css/greatop.css'
-export default function GreatOperation(){
-    const bouton=['+','-','*','/'];
+export default function GreatOperation(props){
     return(
-    <div className='bouton'>
-    {
-        bouton.map ((bouton) =>
-         <button key={bouton}>{bouton}</button>
-         )
-        }
-    </div>
+        <button>{props.bouton}</button>
     )
 }

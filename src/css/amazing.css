@@ -1,8 +1,5 @@
 .number{
-display:grid;
-grid-template-columns: 33% 33% 33%;
-grid-gap: 4px;
-width:70%;
+
 
 }
 .number button{
