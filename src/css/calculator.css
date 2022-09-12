@@ -1,10 +1,13 @@
 .corp{
     display: flex;
+    margin-left: 15%;
+    margin-top: 20px;
+    margin-bottom:30px;
 }
 .touche{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    gap:50px;
     padding:10px;
     margin-left: 15px;
     width: 20%;

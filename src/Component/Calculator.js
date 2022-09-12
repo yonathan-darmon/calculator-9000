@@ -6,13 +6,15 @@ import "../css/calculator.css"
 export default function Calculator(){
     return(
         <div>
+            
+
             <div className="screen">
                 <BeautifullScreen/>
             </div>
             <div className="corp">
                 <Number/>
                 <div className='touche'>
-                    <GreatOperation/>
+                    <GreatOperation />
                     <Equal/>
 
                 </div>
