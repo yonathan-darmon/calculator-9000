@@ -1,7 +1,7 @@
 import '../css/amazing.css'
 function Number(props){
     return(
-        <button >{props.number}</button>
+        <button  onClick={(e)=>props.handleClick(e)} >{props.bouton}</button>
     
     )
 }

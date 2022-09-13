@@ -2,6 +2,6 @@ import '../css/equal.css'
 
 export default function Equal(props){
     return(
-       <button>{props.equal}</button>
+       <button  onClick={(e)=>props.handleClick(e)}>{props.bouton}</button>
     )
 }

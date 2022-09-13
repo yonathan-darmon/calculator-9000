@@ -4,4 +4,6 @@ input{
     border: solid 5px blue;
     border-radius:25px;
     background-color:aquamarine;
+    text-align: end;
+    font-size:30px;
 }

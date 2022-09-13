@@ -1,6 +1,7 @@
 import '../css/greatop.css'
 export default function GreatOperation(props){
+
     return(
-        <button>{props.bouton}</button>
+        <button onClick={(e)=>props.handleClick(e)}>{props.bouton}</button>
     )
 }

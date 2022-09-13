@@ -1,8 +1,8 @@
 import '../css/beautifullscreen.css'
-function BeautifullScreen(){
+function BeautifullScreen(props){
 return (
 <div className="affichage">
-<input type="text" readOnly>
+<input type="text" value={props.value} readOnly>
 
 </input>
 </div>
