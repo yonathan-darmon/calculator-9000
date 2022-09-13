@@ -17,13 +17,21 @@ export default function Calculator(){
             case "-":
             case "*":
             case "/":
-                setScreen(screen+lol)
+                if(screen.slice(-1) ==="+"||screen.slice(-1) ==="-"||screen.slice(-1) ==='*'||screen.slice(-1) ==='/'){
+                    setScreen(screen)
+                }else{
+                    setScreen(screen+lol)
+                }
                 break
             case "=":
                 setScreen(eval(screen))
                 break
             case ".":
-                setScreen()
+                if(screen.includes('.')){
+                    setScreen(screen)
+                }else{
+                    setScreen(screen+lol)
+                }
                 break
             case "C":
                 setScreen("0")
