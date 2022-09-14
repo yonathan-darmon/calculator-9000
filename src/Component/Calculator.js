@@ -17,8 +17,15 @@ export default function Calculator(){
             case "-":
             case "*":
             case "/":
-                if(screen.slice(-1) ==="+"||screen.slice(-1) ==="-"||screen.slice(-1) ==='*'||screen.slice(-1) ==='/'){
-                    setScreen(screen)
+                if(typeof screen==="string"){
+                    if(screen.slice(-1) ==="+"||screen.slice(-1) ==="-"||screen.slice(-1) ==='*'||screen.slice(-1) ==='/'){
+                        if(screen.slice(0,-1)!==""){
+                           let soul=screen.slice(0,-1)
+                            setScreen(soul+lol)
+                        }
+                    }else{
+                        setScreen(screen+lol)
+                    }
                 }else{
                     setScreen(screen+lol)
                 }
