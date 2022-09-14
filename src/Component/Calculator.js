@@ -4,12 +4,14 @@ import GreatOperation from "./GreatOperationButton";
 import Equal from "./MagnificientEqualButton";
 import "../css/calculator.css"
 import { useState } from "react";
+import ItSOverNineThousand from "./ItSOverNineThousand";
 
 
 export default function Calculator(){
     const number =[7,8,9,4,5,6,1,2,3,0,'.','C'];
     const bouton=['+','-','*','/'];
     let [screen, setScreen]=useState('0');
+    let [Over,setOver]=useState(false)
      function Onclick(e){        
         let lol= e.target.innerText
         switch (lol){
@@ -32,6 +34,7 @@ export default function Calculator(){
                 break
             case "=":
                 setScreen(eval(screen))
+                eval(screen) >= 9000 ? setOver(true) : setOver(false) 
                 break
             case ".":
                 if(screen.includes('.')){
@@ -42,6 +45,7 @@ export default function Calculator(){
                 break
             case "C":
                 setScreen("0")
+                setOver(false)
                 break
             default:
                 if (screen.length === 1 && screen ==="0")
@@ -54,10 +58,15 @@ export default function Calculator(){
                 }
         }
      }
+
     return(
         <div>
             
-
+            <div>
+               {
+                Over===true && <ItSOverNineThousand/>
+               }
+            </div>
             <div className="screen">
                 <BeautifullScreen value={screen}/>
             </div>

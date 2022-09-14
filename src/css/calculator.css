@@ -55,3 +55,9 @@ width:70%;
     border:none;
     font-size:20px
 }
+.over{
+    background-color: red;
+    border: solid 10px black;
+    color:blue;
+    font-size: 150px;
+}
