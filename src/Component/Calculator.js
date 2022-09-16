@@ -3,15 +3,25 @@ import Number from "./AmazingNumberButton";
 import GreatOperation from "./GreatOperationButton";
 import Equal from "./MagnificientEqualButton";
 import "../css/calculator.css"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ItSOverNineThousand from "./ItSOverNineThousand";
 
 
 export default function Calculator(){
     const number =[7,8,9,4,5,6,1,2,3,0,'.','C'];
-    const bouton=['+','-','*','/'];
+    const bouton=['+','-','*','/','SAVE'];
     let [screen, setScreen]=useState('0');
     let [Over,setOver]=useState(false)
+    const [save,setSave]=useState(false)
+    useEffect(()=>{
+        async function Inbdd(){
+            let cherche= await fetch('http://localhost/calculator-9000/src/service/traitement.php')
+            let response=await cherche.json() 
+            console.log(response) 
+        }
+        Inbdd()
+    },[])
+   
      function Onclick(e){        
         let lol= e.target.innerText
         switch (lol){
@@ -19,6 +29,7 @@ export default function Calculator(){
             case "-":
             case "*":
             case "/":
+                setSave(false)
                 if(typeof screen==="string"){
                     if(screen.slice(-1) ==="+"||screen.slice(-1) ==="-"||screen.slice(-1) ==='*'||screen.slice(-1) ==='/'){
                         if(screen.slice(0,-1)!==""){
@@ -33,10 +44,13 @@ export default function Calculator(){
                 }
                 break
             case "=":
+                //save===false && Inbdd()
+                localStorage.setItem('opera',screen)
                 setScreen(eval(screen))
                 eval(screen) >= 9000 ? setOver(true) : setOver(false) 
                 break
             case ".":
+                setSave(false)
                 if(screen.includes('.')){
                     setScreen(screen)
                 }else{
@@ -46,8 +60,13 @@ export default function Calculator(){
             case "C":
                 setScreen("0")
                 setOver(false)
+                setSave(false)
+                break
+            case "SAVE":
+                setSave(true)
                 break
             default:
+                setSave(false)
                 if (screen.length === 1 && screen ==="0")
                 {
                     setScreen(lol)
