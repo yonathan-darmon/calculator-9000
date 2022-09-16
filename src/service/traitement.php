@@ -3,7 +3,23 @@
 header("Access-Control-Allow-Origin:*");
 header("Access-Control-Allow-Headers:*");
 
-    echo json_encode('coucou');
-
-
+if($_GET['sort']=='affiche'){
+    affiche();
+}
+else if($_GET['sort']=='ecrire'){
+    ecrire();
+}
+function affiche(){
+    echo json_encode("coucou");
+}
+function ecrire(){
+    $host = "localhost";
+$db_name = "calculator";
+$login = "root";
+$password = "";
+$connexion=new PDO("'mysql:host'=.$host.'dbname='.$db_name,$login,$password");
+    $sth=$this->$connexion->prepare("INSERT INTO calc(`ope`, `result`) VALUES (?,?) ");
+    $sth->execute([$_POST['opera'],$_POST['result']]);
+    echo json_encode($_POST);
+}
 ?>

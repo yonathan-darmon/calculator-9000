@@ -14,13 +14,30 @@ export default function Calculator(){
     let [Over,setOver]=useState(false)
     const [save,setSave]=useState(false)
     useEffect(()=>{
-        async function Inbdd(){
-            let cherche= await fetch('http://localhost/calculator-9000/src/service/traitement.php')
+        async function look(){
+            let cherche= await fetch('http://localhost/calculator-9000/src/service/traitement.php?sort=affiche')
             let response=await cherche.json() 
             console.log(response) 
         }
-        Inbdd()
-    },[])
+        look()
+    },[save])
+    useEffect(()=>{
+        if(save===true){
+            async function write(){
+                let form=new FormData();
+                form.append('calcul',localStorage.getItem('opera'))
+                form.append('result',screen)
+                let inscrire=await fetch('http://localhost/calculator-9000/src/service/traitement.php?sort=ecrire', {
+                    method:"POST",
+                    body:form
+
+                })
+                let answer=await inscrire.json()
+                console.log(answer)
+            }
+            write();
+        }
+    })
    
      function Onclick(e){        
         let lol= e.target.innerText
@@ -44,7 +61,6 @@ export default function Calculator(){
                 }
                 break
             case "=":
-                //save===false && Inbdd()
                 localStorage.setItem('opera',screen)
                 setScreen(eval(screen))
                 eval(screen) >= 9000 ? setOver(true) : setOver(false) 
