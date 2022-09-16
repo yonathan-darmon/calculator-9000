@@ -6,9 +6,9 @@
 }
 .number{
     display:grid;
-grid-template-columns: 33% 33% 33%;
-grid-gap: 4px;
-width:70%;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 4px;
+    width:70%;
 }
 .number button{
 
@@ -34,27 +34,33 @@ width:70%;
 }
 .numer button{
     background-color: blue;
-    padding: 10px;
-    text-align: center;
-    margin-right: auto;
-    width:50%;
+    min-width:50%;
     border-radius: 10px;
     font-size:20px;
 }
 
 .equal {
-    background-color: red;
+    
     text-align: center;
-    margin-right: auto;
-    width:50%;
-    border-radius: 10px;
     font-size:20px;
 }
 .equal button{
-    background-color:red;
-    border:none;
-    font-size:20px
+    font-size:20px;
+    min-width: 100%;
+    border-radius: 10px;
+    background-color: red;
+
 }
 .over img{
     max-width:600px 
+}
+.box{
+    margin-left:25%;
+    width:45%;
+    border: solid black 5px;
+    border-radius: 10px;
+    background-color: grey;
+}
+.screen{
+    margin-top: 20px;
 }

@@ -95,7 +95,7 @@ export default function Calculator(){
      }
 
     return(
-        <div>
+        <div className="box">
             
             <div>
                {
