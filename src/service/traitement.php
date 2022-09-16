@@ -14,12 +14,12 @@ function affiche(){
 }
 function ecrire(){
     $host = "localhost";
-$db_name = "calculator";
-$login = "root";
-$password = "";
-$connexion=new PDO("'mysql:host'=.$host.'dbname='.$db_name,$login,$password");
-    $sth=$this->$connexion->prepare("INSERT INTO calc(`ope`, `result`) VALUES (?,?) ");
-    $sth->execute([$_POST['opera'],$_POST['result']]);
+    $db_name = "calculator";
+    $login = "root";
+    $password = "";
+    $connexion=new PDO("'mysql:host'=.$host.';dbname='.$db_name,$login,$password");
+    $sth=$connexion->prepare("INSERT INTO calc(`ope`, `result`) VALUES (?,?) ");
+    $sth->execute([$_POST['calcul'],$_POST['result']]);
     echo json_encode($_POST);
 }
 ?>
