@@ -33,7 +33,6 @@ export default function Calculator(){
                     body:form
 
                 })
-                let answer=await inscrire.json()
                
             }
             write();
