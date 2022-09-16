@@ -13,11 +13,12 @@ export default function Calculator(){
     let [screen, setScreen]=useState('0');
     let [Over,setOver]=useState(false)
     const [save,setSave]=useState(false)
+    const[result,setResult]=useState([])
     useEffect(()=>{
         async function look(){
             let cherche= await fetch('http://localhost/calculator-9000/src/service/traitement.php?sort=affiche')
             let response=await cherche.json() 
-            console.log(response) 
+            setResult(response)
         }
         look()
     },[save])
@@ -33,7 +34,7 @@ export default function Calculator(){
 
                 })
                 let answer=await inscrire.json()
-                console.log(answer)
+               
             }
             write();
         }
@@ -123,10 +124,19 @@ export default function Calculator(){
                     <Equal bouton="=" handleClick={Onclick}/>
                     </div>
                 </div>
+               
                 
 
                 
             </div>
+            <div>
+                <h3>Resultat enregistré</h3>
+                    <div className="result">
+                        {
+                        result.length>0&&result.map((res,index)=><p key={index}>{res.ope}={res.result}</p>)
+                        }
+                    </div>
+                </div>
         </div>
     )
 }

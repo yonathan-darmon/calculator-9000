@@ -1,25 +1,32 @@
 <?php
-
 header("Access-Control-Allow-Origin:*");
 header("Access-Control-Allow-Headers:*");
 
-if($_GET['sort']=='affiche'){
-    affiche();
-}
-else if($_GET['sort']=='ecrire'){
-    ecrire();
-}
-function affiche(){
-    echo json_encode("coucou");
-}
-function ecrire(){
-    $host = "localhost";
-    $db_name = "calculator";
-    $login = "root";
-    $password = "";
-    $connexion=new PDO("'mysql:host'=.$host.';dbname='.$db_name,$login,$password");
-    $sth=$connexion->prepare("INSERT INTO calc(`ope`, `result`) VALUES (?,?) ");
-    $sth->execute([$_POST['calcul'],$_POST['result']]);
-    echo json_encode($_POST);
-}
+ if($_GET['sort']=='affiche'){
+     affiche();
+ }
+ else if($_GET['sort']=='ecrire'){
+     ecrire();
+ }
+
+ function affiche(){
+     $dbname   = 'calculator';
+     $username = 'root';
+     $password = '';
+     $pdo = new \PDO("mysql:host=localhost;dbname=$dbname", $username,  $password);
+     $sth=$pdo->prepare("SELECT * FROM `calc` ");
+     $sth->execute();
+     $result=$sth->fetchAll(PDO::FETCH_ASSOC);
+     echo json_encode($result);
+ }
+
+ function ecrire(){
+     $dbname   = 'calculator';
+     $username = 'root';
+     $password = '';
+     $pdo = new \PDO("mysql:host=localhost;dbname=$dbname", $username,  $password);
+     $sth=$pdo->prepare("INSERT INTO calc(`ope`, `result`) VALUES (?,?) ");
+     $sth->execute([$_POST['calcul'],$_POST['result']]);
+     echo json_encode($_POST);
+ }
 ?>

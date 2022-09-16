@@ -64,3 +64,8 @@
 .screen{
     margin-top: 20px;
 }
+.result{
+    display:grid;
+    grid-template-columns: 33% 33% 33%;
+
+}
